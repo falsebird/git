@@ -3,10 +3,13 @@
 - git status //查看当前仓库状态，会显示当前添加的文件和修改的内容
 - git add <filename> //将当前文件添加到暂存区  . 代表所有文件
 - git rm --cached <file> //使用该命令可以将add添加到暂存区的修移除
+- git reset HEAD <file>  //将add到暂存区的修改移除  根据提示使用
 - git commit //将当前暂存区的修改提交
+- git commit -m 'message' //直接将message 作为注释将修改添加到仓库
 - git config --[where] user.name "" //添加姓名  -- system --global --local
 - git config --[where] user.email "" //添加email 
 - git config --[where] --unset user.name //删除配置
+- git checkout -- <filename> 将该文件为纳入git仓库中的修改移除
 
 git文件状态
 ![文件状态图](./img/pic1.png)
@@ -17,6 +20,7 @@ git文件状态
 - touch [filename]  //创建文件
 - cat [filename]  //查看文件内容
 - vim [filename]  //编辑文件
+- echo 'whatyouwanttowirtetofile' > [feilname] //将你想写的内容重定向到该文件中，会把原内容覆盖
 
 ###其他
 git 提交的id 是一个摘要值 实际上是
