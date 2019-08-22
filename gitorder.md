@@ -10,6 +10,21 @@
 - git config --[where] user.email "" //添加email 
 - git config --[where] --unset user.name //删除配置
 - git checkout -- <filename> 将该文件为纳入git仓库中的修改移除
+- git mv filename1 filename2 重命名
+-  
+
+git rm 的作用
+1、删除了文件
+2、将删除文件纳入到暂存区
+    想恢复被删除的文件需要进行两个操作
+    a.git git rm test2.txt 将被删除的文件从暂存区恢复到工作区
+    b.git checkout -- test2.txt 将工作区中的修改丢弃掉
+rm 
+  1、将文件删掉这时被删除的文件并未纳入暂存区中
+      如果要纳入暂存区
+      git add test2.txt
+    a.git checkout -- test2.txt 将工作区中的修改丢弃掉
+
 
 git文件状态
 ![文件状态图](./img/pic1.png)
@@ -26,5 +41,5 @@ git文件状态
 git 提交的id 是一个摘要值 实际上是
 设置username 和user.email 有三个地方
 1. /etc/gitdonfig(几乎不会使用)所有用户的信息都会用到这个 git config --system
-2.  ~/.gitconfig (很常用) 用户主目录之下的配置文件 git config --global 
+2. ~/.gitconfig (很常用) 用户主目录之下的配置文件 git config --global 
 3. 针对于特定项目的 .git/config 文件中  git config --local
